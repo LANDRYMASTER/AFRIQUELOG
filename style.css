@@ -517,13 +517,12 @@ header::before {
         flex-direction: column;
     }
 }
-
-/* SERVICES */
+/* SERVICES  */
 
 #section-services {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    padding: 0 20px ;
+    padding: 40px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -532,9 +531,10 @@ header::before {
 
 .services-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Permet aux cartes de passer à la ligne */
     justify-content: center;
     max-width: 1200px;
+    gap: 20px; /* Ajout d'un espacement entre les cartes */
 }
 
 .service-card {
@@ -542,21 +542,35 @@ header::before {
     border-radius: 8px;
     padding: 25px;
     text-align: center;
-    width: 25%;
+    width: calc(25% - 20px); /* Ajustement pour 4 cartes par ligne avec espacement */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
 
-.service-card:hover .icon-box{
+/* Media query pour les tablettes */
+@media (max-width: 1024px) {
+    .service-card {
+        width: calc(50% - 20px); /* 2 cartes par ligne */
+    }
+}
+
+/* Media query pour les mobiles */
+@media (max-width: 500px) {
+    .service-card {
+        width: 100%; /* 1 carte par ligne */
+    }
+}
+
+.service-card:hover .icon-box {
     transform: translateY(-20px);
 }
 
 .service-card:hover .read-more {
-  border-radius: 10px;
-  background-color: #e6b800;
-  color: white;
+    border-radius: 10px;
+    background-color: #e6b800;
+    color: white;
 }
 
 .icon-box {
