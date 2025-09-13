@@ -62,6 +62,9 @@ header::before {
       display: flex;
       flex-direction: column;
     }
+    .pl {
+      display: none;
+    }
 }
 
 .pl {
