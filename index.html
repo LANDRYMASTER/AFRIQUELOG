@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>afriquelog</title>
+  <meta name="description" content="Votre slogan ou description courte." />
+  <meta name="author" content="Votre entreprise" />
+  <link rel="icon" href="favicon.ico" />
+  <!-- Bootstrap 5.3 via CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --brand: #0d6efd; /* Couleur primaire (Bootstrap) */
+      --brand-dark: #0b5ed7;
+      --bg-soft: #f8f9fa;
+    }
+    html { scroll-behavior: smooth; }
+    .navbar-brand span { font-weight: 700; }
+    header.hero {
+      background: linear-gradient(120deg, rgba(13,110,253,.15), rgba(25,135,84,.15)), url('https://images.unsplash.com/photo-1526318472351-c75fcf070305?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+      color: #122;
+    }
+    header .overlay {
+      backdrop-filter: blur(2px);
+      background: rgba(255,255,255,.65);
+    }
+    .section-title {
+      font-weight: 800; letter-spacing:.3px; margin-bottom:.25rem
+    }
+    .section-subtitle { color:#6c757d }
+
+    /* Bouton WhatsApp flottant présent sur toutes les pages */
+    .whatsapp-float {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 1080;
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      display: inline-flex; align-items:center; justify-content:center;
+      background: #25D366; color: white; box-shadow: 0 8px 24px rgba(0,0,0,.18);
+      text-decoration: none;
+    }
+    .whatsapp-float:hover { background:#1ebe5d; color:#fff }
+
+    /* Cartes Services */
+    .service-card i { font-size: 2rem }
+
+    /* Pied de page */
+    footer { background:#0b0f14 }
+    footer, footer a { color:#b6c2cf }
+
+    /* Petite amélioration du focus */
+    .form-control:focus, .btn:focus { box-shadow: 0 0 0 .2rem rgba(13,110,253,.25) }
+  </style>
+</head>
+<body>
+  <!-- Barre de navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#accueil">
+        
+        <span><img src="logo.jpg" alt="" style="aspect-ratio: 1; height: 10vh;" ></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Basculer la navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#accueil">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about-section">À propos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#section-services">Nos services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#section-offres">Commander</a></li>
+          <li class="nav-item"><a class="nav-link" href="#section-blog">Blog / Actualités</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Accueil / Her!o -->
+  <header id="accueil">
+    <div class="header">
+      <div class="">
+        <div class="">
+          <div>
+            <svg class="pl" width="240" height="240" viewBox="0 0 240 240">
+              <circle class="pl__ring pl__ring--a" cx="120" cy="120" r="105" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 660" stroke-dashoffset="-330" stroke-linecap="round"></circle>
+              <circle class="pl__ring pl__ring--b" cx="120" cy="120" r="35" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 220" stroke-dashoffset="-110" stroke-linecap="round"></circle>
+              <circle class="pl__ring pl__ring--c" cx="85" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
+              <circle class="pl__ring pl__ring--d" cx="155" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
+            </svg>
+            <h1 class="an"> AFRIQUELOG SARL</h1>
+            </div>
+            <h3 class="">Des denrées de qualité, livrées à temps</h3>
+            <div class="CTA">
+              <a href="#commander" class="">Commander maintenant</a>
+              <a href="#services" class="">Reserver un Départ</a>
+            </div>
+          </div>
+        </div>
+        <div class="loading Social-Btn">
+          <div class="shadow">⚠ Livraison en cours.</div>
+          <span class="BG">Conteneur de produits cosmetiques <br> en provenance de la chine</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- À propos -->
+  <section id="about-section">
+    <div class="About-container">
+      <div class="about-flex-container">
+          <div class="about-image">
+              <img src="About.jpg" alt="About Afriquelog" class="img">
+          </div>
+          <div class="about-content-box">
+              <h2 class="about-title">À PROPOS D'AFRIQUELOG</h2>
+              <h3 class="about-subtitle">Qui nous sommes et ce qui nous motive</h3>
+              <p class="about-text">
+                  Chez AfriqueLog SARL, notre passion pour la logistique est au cœur de tout ce que nous faisons. Fondée dans le but de simplifier le commerce international, notre entreprise est spécialisée dans le fret aérien et maritime vers l'Afrique et au-delà. Nous nous engageons à offrir à chaque client des solutions de transport rapides, sécurisées et fiables. 
+              </p>
+              <a href="#" class="read-more-btn">EN SAVOIR PLUS</a>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="section-services">
+    <div class="services-container">
+      <div class="service-card">
+          <div class="icon-box">
+              <span class="icon">🔧</span>
+          </div>
+          <h3>Transport réfrigéré</h3>
+          <p>Maintien de la chaîne du froid pour viandes, poissons, produits laitiers et surgelés.</p>
+          <a href="#" class="read-more">CONTACTEZ ------→</a>
+      </div>
+
+      <div class="service-card">
+          <div class="icon-box">
+              <span class="icon">$</span>
+          </div>
+          <h3>Emballage & étiquetage</h3>
+          <p>Conditionnement sécurisé avec étiquettes de traçabilité et codes QR.</p>
+          <a href="#" class="read-more">COMMANDEZ ------→</a>
+      </div>
+
+      <div class="service-card">
+          <div class="icon-box">
+              <span class="icon">✅</span>
+          </div>
+          <h3>Support & suivi</h3>
+          <p>Assistance WhatsApp 7j/7 et suivi en temps réel des expéditions.</p>
+          <a href="#" class="read-more">CONTACTEZ LE SERVICE ------→</a>
+      </div>
+
+      <div class="service-card">
+          <div class="icon-box">
+              <span class="icon">🛠️</span>
+          </div>
+          <h3>Import/Export et Logistique</h3>
+          <p>L'entreprise offre des services d'importation, d'exportation et de logistique, qui incluent la gestion des expéditions de marchandises.</p>
+          <a href="#" class="read-more">COMMANDEZ ------→</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFRES -->
+
+  <section id="section-offres">
+    <h2>OFRRES </h2>
+    <P>Vous verez ici la liste de nos offres disponible</P>
+    <div class="offre-grid">
+      <div class="offre-card">
+          <img src="placeholder1.jpg" alt="MÉTALLURGIE">
+          <h3>MÉTALLURGIE</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue.</p>
+          <a href="#">LIRE LA SUITE &raquo;</a>
+      </div>
+      <div class="offre-card">
+          <img src="placeholder1.jpg" alt="SOUDURE DE L'ACIER">
+          <h3>SOUDURE DE L'ACIER</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue.</p>
+          <a href="#">LIRE LA SUITE &raquo;</a>
+      </div>
+      <div class="offre-card">
+          <img src="placeholder1.jpg" alt="SOUDAGE DE TUYAUX">
+          <h3>SOUDAGE DE TUYAUX</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue.</p>
+          <a href="#">LIRE LA SUITE &raquo;</a>
+      </div>
+      <div class="offre-card">
+          <img src="placeholder1.jpg" alt="SOUDURE SUR MESURE">
+          <h3>SOUDURE SUR MESURE</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue.</p>
+          <a href="#">LIRE LA SUITE &raquo;</a>
+      </div>
+    </div>
+    <div class="offre-grid">
+      <div class="offre-card">
+          <img src="placeholder1.jpg" alt="MÉTALLURGIE">
+          <h3>MÉTALLURGIE</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue.</p>
+          <a href="#">LIRE LA SUITE &raquo;</a>
+      </div>
+      <div class="offre-card">
+          <img src="placeholder1.jpg" alt="SOUDURE DE L'ACIER">
+          <h3>SOUDURE DE L'ACIER</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue.</p>
+          <a href="#">LIRE LA SUITE &raquo;</a>
+      </div>
+      <div class="offre-card">
+          <img src="placeholder1.jpg" alt="SOUDAGE DE TUYAUX">
+          <h3>SOUDAGE DE TUYAUX</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue.</p>
+          <a href="#">LIRE LA SUITE &raquo;</a>
+      </div>
+      <div class="offre-card">
+          <img src="placeholder1.jpg" alt="SOUDURE SUR MESURE">
+          <h3>SOUDURE SUR MESURE</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue.</p>
+          <a href="#">LIRE LA SUITE &raquo;</a>
+      </div>
+    </div>
+  </section>
+
+<!-- BLOG -->
+
+  <section id="section-blog">
+    <div class="site-container">
+      <h2 class="news-heading">Nos Actualités</h2>
+
+      <!-- Article principal -->
+      <div class="featured-card">
+          <img src="https://placehold.co/800x600/6A5ACD/ffffff?text=Expedition+Aerienne" alt="Image d'une expédition aérienne" class="featured-card-image">
+          <div class="featured-card-content">
+              <span class="featured-card-tag">À la une</span>
+              <h3 class="featured-card-title">Augmentation de la fréquence des vols cargo pour l'export vers l'Europe</h3>
+              <p class="featured-card-excerpt">Pour répondre à la demande croissante de nos clients, AfriqueLog augmente le nombre de ses vols cargo hebdomadaires. Ceci garantit des délais de livraison plus courts et une plus grande flexibilité pour vos marchandises.</p>
+              <a href="#" class="read-more-btn">
+                  Lire l'article complet
+                  <svg fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                  </svg>
+              </a>
+          </div>
+      </div>
+
+      <!-- Grille d'articles secondaires -->
+      <div class="articles-grid">
+          <!-- Article secondaire 1 -->
+          <div class="article-card">
+              <img src="https://placehold.co/600x400/B22222/ffffff?text=Nouveaux+services" alt="Nouveaux services d'AfriqueLog" class="article-image">
+              <div class="article-content">
+                  <span class="article-tag">Services</span>
+                  <h3 class="article-title">Lancement de notre nouveau service de dédouanement express</h3>
+                  <a href="#" class="read-more-btn">
+                      Lire la suite
+                      <svg fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                      </svg>
+                  </a>
+              </div>
+          </div>
+          <!-- Article secondaire 2 -->
+          <div class="article-card">
+              <img src="https://placehold.co/600x400/FFD700/ffffff?text=Recapitulatif" alt="Récapitulatif des derniers départs" class="article-image">
+              <div class="article-content">
+                  <span class="article-tag">Résumé</span>
+                  <h3 class="article-title">Récapitulatif de nos départs du mois d'août</h3>
+                  <a href="#" class="read-more-btn">
+                      Lire la suite
+                      <svg fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                      </svg>
+                  </a>
+              </div>
+          </div>
+          <!-- Article tersiaire 3 -->
+          <div class="article-card">
+            <img src="https://placehold.co/600x400/FFD700/ffffff?text=Recapitulatif" alt="Récapitulatif des derniers départs" class="article-image">
+            <div class="article-content">
+                <span class="article-tag">Résumé</span>
+                <h3 class="article-title">Récapitulatif de nos départs du mois d'août</h3>
+                <a href="#" class="read-more-btn">
+                    Lire la suite
+                    <svg fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <h2 class="section-title">Contact</h2>
+          <p class="section-subtitle">Dites-nous ce dont vous avez besoin</p>
+          <form class="row g-3" onsubmit="handleContact(event)">
+            <div class="col-md-6">
+              <label for="nom" class="form-label">Nom</label>
+              <input type="text" class="form-control" id="nom" required>
+            </div>
+            <div class="col-md-6">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="col-12">
+              <label for="objet" class="form-label">Objet</label>
+              <input type="text" class="form-control" id="objet" placeholder="Demande de devis" required>
+            </div>
+            <div class="col-12">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" rows="4" required></textarea>
+            </div>
+            <div class="col-12 d-flex gap-2">
+              <button type="submit" class="btn btn-primary">Envoyer</button>
+              <a id="ctaWhatsApp" class="btn btn-success" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
+            </div>
+            <small class="text-muted">En cliquant, vous acceptez notre <a href="#">politique de confidentialité</a>.</small>
+          </form>
+        </div>
+        <div class="col-lg-6">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="card-body">
+              <h5 class="card-title">Nos coordonnées</h5>
+              <ul class="list-unstyled small mb-4">
+                <li><strong>Adresse:</strong> RCI, Abidjan, Yopougon Carrefour Zone, non loin du CGI <strong> 01BP 7361 Abidjan 01 </strong> </li>
+                <li><strong>Téléphone:</strong> +2250700337777-+2252523019059</li>
+                <li><strong>Email:</strong> contact@afriquelog.com</li>
+              </ul>
+              <div class="ratio ratio-16x9 rounded-3 overflow-hidden">
+                <iframe src="https://maps.google.com/maps?q=Abidjan&t=&z=12&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Carte"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pied de page -->
+  <footer class="py-4">
+    <div class="container d-flex flex-column flex-lg-row align-items-center justify-content-between">
+      <div class="small">© <span id="year"></span> Votre Marque. Tous droits réservés.</div>
+      <ul class="nav small">
+        <li class="nav-item"><a class="nav-link" href="#apropos">À propos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Bouton WhatsApp global (flottant) -->
+  <!-- Remplacez 2250123456789 par votre numéro en format international sans + ni espaces -->
+  <a class="whatsapp-float" id="whatsAppFloat" href="https://wa.me/2250123456789?text=Bonjour%20!%20Je%20souhaite%20des%20infos%20sur%20vos%20services." target="_blank" aria-label="WhatsApp">
+    <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4ac.svg" alt="WA" width="26" height="26" />
+  </a>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <script>
+    // Année automatique
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Construire un message WhatsApp depuis le formulaire de contact
+    const ctaWhatsApp = document.getElementById('ctaWhatsApp');
+    const phone = '2250123456789'; // ⚠️ Remplacez par votre numéro au format international (sans +, espaces ou zéros initiaux inutiles)
+    ctaWhatsApp.href = `https://wa.me/${phone}?text=${encodeURIComponent('Bonjour ! Je souhaite des informations.')} `;
+
+    function handleContact(e) {
+      e.preventDefault();
+      const nom = document.getElementById('nom').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const objet = document.getElementById('objet').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const full = `Bonjour, je suis ${nom} (${email}). Objet: ${objet}.\n\n${message}`;
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(full)}`;
+      window.open(url, '_blank');
+    }
+
+    // Met en évidence le lien actif au scroll
+    const navLinks = document.querySelectorAll('.navbar .nav-link');
+    const sections = Array.from(navLinks).map(l => document.querySelector(l.getAttribute('href'))).filter(Boolean);
+    window.addEventListener('scroll', () => {
+      const pos = window.scrollY + 120;
+      for (const section of sections) {
+        const id = section.getAttribute('id');
+        if (pos >= section.offsetTop && pos < section.offsetTop + section.offsetHeight) {
+          navLinks.forEach(l => l.classList.remove('active'));
+          const active = document.querySelector(`.navbar .nav-link[href="#${id}"]`);
+          active && active.classList.add('active');
+        }
+      }
+    });
+  </script>
+</body>
+</html>
