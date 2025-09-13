@@ -1,4 +1,3 @@
-
 header {
     height: 88vh;
     position: relative;
@@ -345,7 +344,8 @@ header::before {
   letter-spacing: 1px;
 }
 
-/* Styles pour la section "À propos" de la page d'accueil */
+/* À propos */
+
 #about-section {
     padding: 80px 0;
     background-color: #f8f8f8;
@@ -360,7 +360,7 @@ header::before {
 
 .about-flex-container {
     display: flex;
-    flex-direction: column; /* La mise en page devient en colonne sur mobile */
+    flex-direction: column;
     max-width: 80vw;
     align-items: center;
     margin: 0 20px;
@@ -368,14 +368,14 @@ header::before {
 
 .about-image {
     flex: 1;
-    width: 100%; /* L'image occupe toute la largeur sur mobile */
-    margin-bottom: 20px; /* Ajout d'une marge en bas de l'image sur mobile */
+    width: 100%; 
+    margin-bottom: 20px; 
 }
 
 .about-image img {
     width: 100%;
     height: auto;
-    transform: none; /* Suppression de la translation sur mobile */
+    transform: none; 
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
 }
 
@@ -383,7 +383,7 @@ header::before {
     flex: 2;
     background-color: #fff;
     padding: 40px;
-    transform: none; /* Suppression de la translation sur mobile */
+    transform: none; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -435,10 +435,9 @@ header::before {
     background-color: #e6b800;
 }
 
-/* Media query pour les tablettes et les ordinateurs de bureau */
 @media (min-width: 768px) {
     .about-flex-container {
-        flex-direction: row; /* La mise en page redevient en ligne */
+        flex-direction: row; 
     }
 
     .about-image {
@@ -531,10 +530,10 @@ header::before {
 
 .services-container {
     display: flex;
-    flex-wrap: wrap; /* Permet aux cartes de passer à la ligne */
+    flex-wrap: wrap; 
     justify-content: center;
     max-width: 1200px;
-    gap: 20px; /* Ajout d'un espacement entre les cartes */
+    gap: 20px; 
 }
 
 .service-card {
@@ -542,24 +541,24 @@ header::before {
     border-radius: 8px;
     padding: 25px;
     text-align: center;
-    width: calc(25% - 20px); /* Ajustement pour 4 cartes par ligne avec espacement */
+    width: calc(25% - 20px); 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
 
-/* Media query pour les tablettes */
+
 @media (max-width: 1024px) {
     .service-card {
-        width: calc(50% - 20px); /* 2 cartes par ligne */
+        width: calc(50% - 20px); 
     }
 }
 
-/* Media query pour les mobiles */
+
 @media (max-width: 500px) {
     .service-card {
-        width: 100%; /* 1 carte par ligne */
+        width: 100%; 
     }
 }
 
