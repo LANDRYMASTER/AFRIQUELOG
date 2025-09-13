@@ -48,6 +48,23 @@ header::before {
     color: whitesmoke;
 }
 
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2.5rem;
+    }
+    .header h3 {
+        font-size: 1rem;
+    }
+    .CTA a {
+        font-size: 1.2rem;
+        padding: 10px;
+    }
+    .CTA {
+      display: flex;
+      flex-direction: column;
+    }
+}
+
 .pl {
   width: 6em;
   height: 6em;
@@ -254,10 +271,10 @@ header::before {
   }
 }
 
-/* h1{
-    color: orangered;
-    font-size: 50px;
-} */
+.CTA {
+  display: flex;
+  flex-wrap: wrap;
+}
 
 .CTA a{
     text-decoration: none;
@@ -343,6 +360,7 @@ header::before {
 
 .about-flex-container {
     display: flex;
+    flex-direction: column; /* La mise en page devient en colonne sur mobile */
     max-width: 80vw;
     align-items: center;
     margin: 0 20px;
@@ -350,13 +368,14 @@ header::before {
 
 .about-image {
     flex: 1;
-    width: 50%;
+    width: 100%; /* L'image occupe toute la largeur sur mobile */
+    margin-bottom: 20px; /* Ajout d'une marge en bas de l'image sur mobile */
 }
 
 .about-image img {
-    width: 600px;
+    width: 100%;
     height: auto;
-    transform: translateX(25px);
+    transform: none; /* Suppression de la translation sur mobile */
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
 }
 
@@ -364,7 +383,7 @@ header::before {
     flex: 2;
     background-color: #fff;
     padding: 40px;
-    transform: translateX(-25px);
+    transform: none; /* Suppression de la translation sur mobile */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -388,9 +407,9 @@ header::before {
 .about-title::after {
     content: '';
     display: block;
-    width: 60px; /* Largeur de la barre de soulignement */
+    width: 60px;
     height: 4px;
-    background-color: #ffcc00; /* La couleur d'accent jaune */
+    background-color: #ffcc00;
     margin-top: 5px;
 }
 
@@ -404,7 +423,7 @@ header::before {
 .read-more-btn {
     display: inline-block;
     padding: 12px 25px;
-    background-color: #ffcc00; /* La couleur d'accent jaune */
+    background-color: #ffcc00;
     color: #000;
     text-decoration: none;
     font-weight: bold;
@@ -415,6 +434,28 @@ header::before {
 .read-more-btn:hover {
     background-color: #e6b800;
 }
+
+/* Media query pour les tablettes et les ordinateurs de bureau */
+@media (min-width: 768px) {
+    .about-flex-container {
+        flex-direction: row; /* La mise en page redevient en ligne */
+    }
+
+    .about-image {
+        width: 50%;
+        margin-bottom: 0;
+    }
+
+    .about-image img {
+        width: 600px;
+        transform: translateX(25px);
+    }
+    
+    .about-content-box {
+        transform: translateX(-25px);
+    }
+}
+
 
 .Social-Btn:hover .BG::before {
   opacity: 1;
